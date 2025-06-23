@@ -26,11 +26,12 @@ app.use(express.static(path.join(__dirname,"/public")))
 app.set("views",path.join(__dirname,"views"))
 app.set("view engine","ejs")
 app.engine("ejs",ejsMate)
-//app.use(limiter) // this will limit the number of requests to 100 per 15 minutes for all routes
+app.use(limiter) // this will limit the number of requests to 100 per 15 minutes for all routes
 
 dbUrl=process.env.ATLASDB_URL
 //server connection
-app.listen(8080,()=>{
+const port = process.env.PORT || 8080 
+app.listen(port,()=>{
     console.log("server is listening to port 8080")
 })
 main()
@@ -42,23 +43,23 @@ async function main() {
     //await mongoose.connect("mongodb://127.0.0.1:27017/wanderlust");
     await mongoose.connect(dbUrl); // this will connect to the database using the url provided in the .env file
 }
-app.get("/",(req,res)=>{
-    res.send("hi i am root")
-})
+// app.get("/",(req,res)=>{
+//     res.send("hi i am root")
+// })
 
-const store= MongoStore.create({
-    mongoUrl: dbUrl,
-    crypto: {
-        secret: process.env.SECRET,
-    },
-    touchAfter: 24 * 3600, // this will update the session after 24 hours
-})
-store.on("error", (err) =>{
-    console.log("mongo session store error",err)
-})
+// const store= MongoStore.create({
+//     mongoUrl: dbUrl,
+//     crypto: {
+//         secret: process.env.SECRET,
+//     },
+//     touchAfter: 24 * 3600, // this will update the session after 24 hours
+// })
+// store.on("error", (err) =>{
+//     console.log("mongo session store error",err)
+// })
 //session middleware
 const sessionOptions={
-    store,
+    //store,
     secret: process.env.SECRET,
     resave:false,
     saveUninitialized:true,
@@ -110,6 +111,11 @@ app.use((err,req,res,next)=>{
     res.render("listing/error.ejs",{message})
     //res.status(statusCode).send(message)
 })
+
+
+
+
+
 
 
 
