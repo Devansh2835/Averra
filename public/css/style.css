@@ -1,0 +1,208 @@
+body{
+   font-family: "Plus Jakarta Sans", sans-serif !important;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+.container{
+   flex: 1;
+}
+.navbar{
+   min-height: 6rem;
+   background-color: white; /*yeh krne se backrgound color transparent nahi rahega aur scroll hoke content gayab ho jayega rather than dikhne ke*/
+}
+.navbar a{
+   font-size: 1.3rem;
+}
+
+.fa-airbnb{
+   font-size: 2.5rem;
+   color: red;
+}
+.f-info-links{
+   width: 100%;
+}
+.f-info-socials{
+   width: 100%;
+   font-size: 1.5rem;
+}
+.f-info-links a{
+   text-decoration: none;
+   color: black;
+   font-size: 1.2rem;
+}
+.f-info-brand{
+   font-size: 1.3rem;
+}
+.f-info-socials i{
+   margin-right: 1rem;
+}
+.f-info-links a:hover{
+   text-decoration: underline;
+}
+.f-info{
+   display: flex;
+   justify-content: center;
+   align-items: space-evenly;
+   height: 8rem;
+   flex-wrap: wrap;
+   text-align: center;
+   background-color: #ebebeb; /*yeh krne se backrgound color transparent nahi rahega aur scroll hoke content gayab ho jayega rather than dikhne ke*/
+}
+
+.listing-card{
+   border: none !important;
+   margin-bottom: 2rem;
+}
+.listing-card p{
+   font-size: larger;
+}
+.card-img-top{
+   border-radius: 1rem;
+   width: 100% !important;
+   object-fit: cover !important;
+   height: 20rem;
+}
+.card-title{
+   font-size: 1.35rem;
+   font-weight: 600;
+}
+.listing-link{
+   text-decoration: none;
+}
+.class-img-overlay{
+   opacity: 0;
+}
+.card-img-overlay:hover{
+   opacity: 0.2;
+   background-color: white; 
+}
+.add-btn{
+   background-color: red !important;
+   border: none !important;
+}
+.edit-btn{
+   background-color: red !important;
+   border: none !important;
+   
+}
+.show-img{
+   height: 30vh;
+}
+.btns{
+   display: flex;
+   margin-top: 0;
+}
+.alert{
+   margin-top: 3rem;
+   padding-top: 0;
+}
+#map { 
+   min-height: 400px !important; min-width: 100% !important; 
+}
+.btn.btn-search{
+   background-color: red ; 
+   color: white;
+   border-radius: 25px ;
+   padding: 0rem 1rem 0rem 1rem ;
+}
+.btn.btn-search:hover{
+   background-color: white ; 
+   color: grey ;
+}
+.btn.btn-search i{
+   display: inline;
+   margin-right: .5rem;
+}
+.form-control.search-inp{
+   border-radius: 25px ;
+   padding: .5rem 2.5rem .5rem  3rem ;
+}
+#filters{
+   display: flex;
+   flex-wrap: wrap;
+   margin-top: .8rem;
+   margin-bottom: .8rem;
+   align-items: center;
+}
+.filter{
+   text-align: center;
+   margin-right: 2rem;
+   margin-top: 1rem;
+   opacity: .6;
+   flex: 0 0 auto;
+   white-space: nowrap;
+}
+.filter:hover{
+   opacity: 1;
+   cursor:pointer;
+}
+.filter p{
+   font-size: .9rem;
+}
+/* .tax-info{
+   display: none; visibility 0 krne se page pe space gherta hai bas dikhta ni isse space bhi occupy ni krta aur dikhta bhi ni
+} */
+.tax-toggle{
+   border: 1px solid black;
+   border-radius: 1rem;
+   padding: .8rem;
+   height: 3.5rem;
+   margin-left: auto;
+   display: flex;
+   align-items: center;
+}
+#filter-collapse{
+   min-width: 0;
+   overflow: hidden;
+}
+.toggle-button{
+   font-size: 1.5rem !important;
+   margin: 1rem;
+   border-radius: 60% !important;
+}
+#filterCollapse button{
+   margin: 0 !important;
+   padding: 0 !important;
+   border: none !important;
+   background-color: transparent !important;
+}
+.policy{
+   max-width: 700px;
+   margin: 40px auto 60px auto;
+   background: #fff;
+   border-radius: 16px;
+   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+   padding: 40px 32px;
+   font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+   color: #333;
+}
+.policy h1{
+   font-size: 2.5rem;
+   color: #ff385c;
+   margin-bottom: 24px;
+   text-align: center;
+   letter-spacing: 1px;
+}
+.policy h2{
+   color: #222;
+   margin-top: 32px;
+   margin-bottom: 12px;
+   font-size: 1.3rem;
+   border-left: 4px solid #ff385c;
+   padding-left: 10px;
+}
+.policy ul{
+   margin: 0 0 24px 0;
+   padding-left: 24px;
+}
+.policy li{
+   margin-bottom: 12px;
+   line-height: 1.7;
+   font-size: 1.12rem;
+}
+.policy p{
+   margin-bottom: 16px;
+   line-height: 1.7;
+   font-size: 1.12rem;
+}
