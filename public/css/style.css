@@ -3,6 +3,7 @@ body{
    display: flex;
    flex-direction: column;
    min-height: 100vh;
+   background-color: #F7FFF7 !important;
 }
 .container{
    flex: 1;
@@ -49,23 +50,78 @@ body{
    text-align: center;
    background-color: #ebebeb; /*yeh krne se backrgound color transparent nahi rahega aur scroll hoke content gayab ho jayega rather than dikhne ke*/
 }
-
-.listing-card{
-   border: none !important;
-   margin-bottom: 2rem;
+.heading {
+    font-family: 'Poppins', 'Plus Jakarta Sans', Arial, sans-serif;
+    color: #552ca8;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
-.listing-card p{
+p{
    font-size: larger;
 }
-.card-img-top{
-   border-radius: 1rem;
-   width: 100% !important;
-   object-fit: cover !important;
-   height: 20rem;
+.listing-card-show {
+    border: none !important;
+    background: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0 6px 32px 0 rgba(60,72,88,.15);
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+    padding: 2.5rem 2rem 2.5rem 2rem;
+    width: 65% !important;
+    margin: 0 auto 2rem auto;
 }
-.card-title{
-   font-size: 1.35rem;
-   font-weight: 600;
+
+.listing-card-show:hover {
+    box-shadow: 0 25px 60px 0 rgba(60,72,88,.25);
+}
+.listing-card-show .show-img {
+    border-radius: 1.2rem;
+    width: 95%;
+    height: 25rem;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    image-rendering: auto; /* For Chrome and modern browsers */
+    image-rendering: -webkit-optimize-contrast;/* For Firefox */
+    image-rendering: crisp-edges;/* Prevents blurring on scaling */
+}
+.listing-card-show .card-body {
+    padding: 1.5rem 0 0 0;
+}
+.listing-card-index {
+    border: none !important;
+    background: #fff;
+    border-radius: 1.5rem;
+    box-shadow: 0 6px 32px 0 rgba(60,72,88,.12);
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+    padding: 1.2rem 1.2rem 1.5rem 1.2rem;
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.listing-card-index:hover {
+    box-shadow: 0 16px 40px 0 rgba(60,72,88,.18);
+}
+.listing-card-index .card-img-top {
+    border-radius: 1rem;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+.listing-card-index .card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+.listing-card-index .card-text {
+    font-size: 1.05rem;
+    color: #444;
+    text-align: left;
 }
 .listing-link{
    text-decoration: none;
@@ -77,6 +133,10 @@ body{
    opacity: 0.2;
    background-color: white; 
 }
+.show-btns{
+   display: flex;
+   margin-top: 1.5rem;
+}
 .add-btn{
    background-color: red !important;
    border: none !important;
@@ -87,7 +147,7 @@ body{
    
 }
 .show-img{
-   height: 30vh;
+   height: 25rem;
 }
 .btns{
    display: flex;
@@ -98,7 +158,12 @@ body{
    padding-top: 0;
 }
 #map { 
-   min-height: 400px !important; min-width: 100% !important; 
+   min-height: 400px !important; 
+   min-width: 100% !important; 
+    border-radius: 1rem;
+    border: 2px solid #e0e7ff;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 12px 0 rgba(60,72,88,.08);
 }
 .btn.btn-search{
    background-color: red ; 
@@ -205,4 +270,107 @@ body{
    margin-bottom: 16px;
    line-height: 1.7;
    font-size: 1.12rem;
+}
+.hero-bg {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: -2;
+    background: url('https://th.bing.com/th/id/R.54a08f440ac87229c787c4a7d4d7c2e1?rik=ojvNPtXt1kFaeQ&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f06%2fDownload-HD-Nature-Backgrounds.jpg&ehk=8CS7wIfwrmHKIoJvi2wEW6cn0UCtTSgbouYjpo01bz8%3d&risl=&pid=ImgRaw&r=0') center/cover no-repeat;
+    filter: blur(6px) brightness(0.7);
+}
+.floating-icons {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
+.floating-icon {
+    position: absolute;
+    opacity: 0.7;
+    animation: float 8s infinite ease-in-out;
+    height: 70px; 
+    width: 70px;
+}
+.floating-icon:nth-child(1) { left: 6%; top: 18%; width: 60px; animation-delay: 0s;}
+.floating-icon:nth-child(2) { left: 60%; top: 4%; width: 50px; animation-delay: 2s;}
+.floating-icon:nth-child(3) { left: 92%; top: 83%; width: 70px; animation-delay: 4s;}
+.floating-icon:nth-child(4) { left: 17%; top: 93%; width: 45px; animation-delay: 1s;}
+.floating-icon:nth-child(5) { left: 88%; top: 30%; width: 55px; animation-delay: 3s;}
+@keyframes float {
+    0% { transform: translateY(0) scale(1);}
+    50% { transform: translateY(-30px) scale(1.08);}
+    100% { transform: translateY(0) scale(1);}
+} 
+.glass-card {
+    margin: 90px auto 0 auto;
+    max-width: 1000px;
+    padding: 48px 36px 38px 36px;
+    background: rgba(255,255,255,0.18);
+    border-radius: 32px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.22);
+    backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(255,255,255,0.25);
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+.glass-card h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    margin-bottom: 18px;
+    letter-spacing: 1.5px;
+    background: linear-gradient(90deg, #ffb400 0%, #ff5a5f 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.glass-card p {
+    font-size: 1.8rem;
+    margin-bottom: 32px;
+    font-weight: 400;
+    color: #f8f8f8;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.13);
+}
+.glass-btn {
+    padding: 15px 38px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #ff5a5f 0%, #ffb400 100%);
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    transition: background 0.3s, transform 0.2s;
+    cursor: pointer;
+    text-decoration: none;
+}
+.glass-btn:hover {
+    background: linear-gradient(90deg, #ffb400 0%, #ff5a5f 100%);
+    transform: scale(1.05);
+}
+@media (max-width: 700px) {
+    .glass-card { padding: 28px 10px 24px 10px; }
+    .glass-card h1 { font-size: 1.5rem; }
+    .glass-card p { font-size: 1rem; }
+}
+.review-add{
+    background: #f1f5f9;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 2px 12px 0 rgba(60,72,88,.08);
+    margin-bottom: 2rem;
+}
+.review-add h3 {
+    font-weight: 600;
+    color: #6366f1;
+}
+hr {
+    border-top: 2px solid #e0e7ff;
+}
+.review-show{
+   border-radius: 1rem;
+    box-shadow: 0 2px 12px 0 rgba(60,72,88,.10);
+    background: #fff;
+    margin-bottom: 1.5rem;
+    transition: box-shadow 0.2s;
 }

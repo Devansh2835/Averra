@@ -56,15 +56,15 @@ module.exports.isReviewAuthor= async (req, res, next) => {
     let {id,reviewId}= req.params;
     let review= await Review.findById(reviewId)
     if (!review.author.equals(res.locals.currUser._id)) {
-        req.flash("error", "You are not the owner of this Review!");
+        req.flash("error", "You are not the author of this Review!");
         return res.redirect(`/listings/${id}`);
     }
     next()
 }
 module.exports.limiter = rateLimit({
   windowMs: 10*60 * 1000, // 15 minutes
-  max: 50, // limit each IP to 50 requests per windowMs
-  message: 'Too many requests from this IP, please try again later.'
+  max: 100, // limit each IP to 100 requests per windowMs
+  message: 'Too many requests from this User, please try again later.'
 });
 module.exports.geocodeLocation = async (req, res, next) => {
     const { location, country } = req.body.listing;

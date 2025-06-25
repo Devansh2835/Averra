@@ -1,5 +1,5 @@
 <% layout("/layouts/boilerplate") %>
-<body>
+<body id="index">
   <div id="filters">
     <div class="d-flex flex-nowrap align-items-center overflow-hidden" style="flex:1;" id="filterCollapse">
       <div class="filter">
@@ -119,7 +119,7 @@
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
         <% for(let listing of allListings){ %>
             <a href="/listings/<%= listing._id %>" class="listing-link">
-                <div class="card listing-card">
+                <div class="card listing-card-index">
                     <img src="<%= listing.image.url %>" class="card-img-top" alt="listing image">
                     <div class="card-img-overlay"></div>
                     <div class="card-body">

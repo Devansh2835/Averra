@@ -28,7 +28,7 @@ app.set("view engine","ejs")
 app.engine("ejs",ejsMate)
 app.use(limiter) // this will limit the number of requests to 100 per 15 minutes for all routes
 
-dbUrl=process.env.ATLASDB_URL
+const dbUrl=process.env.ATLASDB_URL
 //server connection
 const port = process.env.PORT || 8080 
 app.listen(port,()=>{
@@ -43,23 +43,20 @@ async function main() {
     //await mongoose.connect("mongodb://127.0.0.1:27017/wanderlust");
     await mongoose.connect(dbUrl); // this will connect to the database using the url provided in the .env file
 }
-// app.get("/",(req,res)=>{
-//     res.send("hi i am root")
-// })
 
-// const store= MongoStore.create({
-//     mongoUrl: dbUrl,
-//     crypto: {
-//         secret: process.env.SECRET,
-//     },
-//     touchAfter: 24 * 3600, // this will update the session after 24 hours
-// })
-// store.on("error", (err) =>{
-//     console.log("mongo session store error",err)
-// })
+const store= MongoStore.create({
+    mongoUrl: dbUrl,
+    crypto: {
+        secret: process.env.SECRET,
+    },
+    touchAfter: 24 * 3600, // this will update the session after 24 hours
+})
+store.on("error", (err) =>{
+    console.log("mongo session store error",err)
+})
 //session middleware
 const sessionOptions={
-    //store,
+    store,
     secret: process.env.SECRET,
     resave:false,
     saveUninitialized:true,
@@ -81,7 +78,7 @@ passport.use(new LocalStrategy(User.authenticate())) // this will use the authen
 passport.serializeUser(User.serializeUser()) // this will serialize the user and store the user id in the session
 passport.deserializeUser(User.deserializeUser()) // this will deserialize the user and get the user object from the user id stored in the session
 
-//flash middleware
+//middleware
 app.use((req,res,next)=>{
     res.locals.success=req.flash("success")//this will make the success message available in all views
     res.locals.error=req.flash("error")//this will make the error message available in all views
@@ -93,6 +90,10 @@ app.use((req,res,next)=>{
 app.use("/listings",listingRouter)
 app.use("/listings/:id/reviews",reviewRouter)
 app.use("/",userRouter)
+
+app.get("/", (req, res) => {
+    res.render("listing/home");
+});
 
 app.get("/privacy", (req, res) => {
     res.render("policies/privacy.ejs")
@@ -111,7 +112,6 @@ app.use((err,req,res,next)=>{
     res.render("listing/error.ejs",{message})
     //res.status(statusCode).send(message)
 })
-
 
 
 

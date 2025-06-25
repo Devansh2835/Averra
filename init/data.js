@@ -11,7 +11,7 @@ const sampleListings = [
     country: "United States",
     latitude: 34.0259,
     longitude: -118.7798,
-    category: "Beaches"
+    category: "beaches"
   },
   {
     title: "Modern Loft in Downtown",
@@ -25,7 +25,7 @@ const sampleListings = [
     country: "United States",
     latitude: 40.7128,
     longitude: -74.0060,
-    category: "Urban"
+    category: "urban"
   },
   {
     title: "Mountain Retreat",
@@ -39,7 +39,7 @@ const sampleListings = [
     country: "United States",
     latitude: 39.1911,
     longitude: -106.8175,
-    category: "Mountain"
+    category: "mountain"
   },
   {
     title: "Historic Villa in Tuscany",
@@ -53,7 +53,7 @@ const sampleListings = [
     country: "Italy",
     latitude: 43.7696,
     longitude: 11.2558,
-    category: "Culture"
+    category: "culture"
   },
   {
     title: "Secluded Treehouse Getaway",
@@ -67,7 +67,7 @@ const sampleListings = [
     country: "United States",
     latitude: 45.5152,
     longitude: -122.6784,
-    category: "Farmstays"
+    category: "farmstays"
   },
   {
     title: "Beachfront Paradise",
@@ -81,7 +81,7 @@ const sampleListings = [
     country: "Mexico",
     latitude: 21.1619,
     longitude: -86.8515,
-    category: "Beaches"
+    category: "beaches"
   },
   {
     title: "Rustic Cabin by the Lake",
@@ -95,7 +95,7 @@ const sampleListings = [
     country: "United States",
     latitude: 39.0968,
     longitude: -120.0324,
-    category: "Beaches"
+    category: "beaches"
   },
   {
     title: "Luxury Penthouse with City Views",
@@ -109,7 +109,7 @@ const sampleListings = [
     country: "United States",
     latitude: 34.0522,
     longitude: -118.2437,
-    category: "Urban"
+    category: "urban"
   },
   {
     title: "Ski-In/Ski-Out Chalet",
@@ -123,7 +123,7 @@ const sampleListings = [
     country: "Switzerland",
     latitude: 46.0961,
     longitude: 7.2266,
-    category: "Mountain"
+    category: "mountain"
   },
   {
     title: "Safari Lodge in the Serengeti",
@@ -137,7 +137,7 @@ const sampleListings = [
     country: "Tanzania",
     latitude: -2.3333,
     longitude: 34.8333,
-    category: "Nature"
+    category: "nature"
   },
   {
     title: "Historic Canal House",
@@ -151,10 +151,10 @@ const sampleListings = [
     country: "Netherlands",
     latitude: 52.3676,
     longitude: 4.9041,
-    category: "Culture"
+    category: "culture"
   },
   {
-    title: "Private Island Retreat",
+    title: "Private island Retreat",
     description: "Have an entire island to yourself for a truly exclusive and unforgettable vacation experience.",
     image: {
       url: "https://images.unsplash.com/photo-1618140052121-39fc6db33972?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bG9kZ2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
@@ -165,7 +165,7 @@ const sampleListings = [
     country: "Fiji",
     latitude: -17.7134,
     longitude: 178.0650,
-    category: "Island"
+    category: "island"
   },
   {
     title: "Charming Cottage in the Cotswolds",
@@ -179,7 +179,7 @@ const sampleListings = [
     country: "United Kingdom",
     latitude: 51.8330,
     longitude: -1.8433,
-    category: "Nature"
+    category: "nature"
   },
   {
     title: "Historic Brownstone in Boston",
@@ -193,7 +193,7 @@ const sampleListings = [
     country: "United States",
     latitude: 42.3601,
     longitude: -71.0589,
-    category: "Urban"
+    category: "urban"
   },
   {
     title: "Beachfront Bungalow in Bali",
@@ -207,10 +207,10 @@ const sampleListings = [
     country: "Indonesia",
     latitude: -8.3405,
     longitude: 115.0920,
-    category: "Beaches"
+    category: "beaches"
   },
   {
-    title: "Mountain View Cabin in Banff",
+    title: "mountain View Cabin in Banff",
     description: "Enjoy breathtaking mountain views from this cozy cabin in the Canadian Rockies.",
     image: {
       url: "https://images.unsplash.com/photo-1521401830884-6c03c1c87ebb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGxvZGdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
@@ -221,11 +221,11 @@ const sampleListings = [
     country: "Canada",
     latitude: 51.1784,
     longitude: -115.5708,
-    category: "Mountain"
+    category: "mountain"
   },
   {
     title: "Art Deco Apartment in Miami",
-    description: "Step into the glamour of the 1920s in this stylish Art Deco apartment in South Beaches.",
+    description: "Step into the glamour of the 1920s in this stylish Art Deco apartment in South beaches.",
     image: {
       url: "https://plus.unsplash.com/premium_photo-1670963964797-942df1804579?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGxvZGdlfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60",
       filename: "listing_img_17.jpg"
@@ -235,7 +235,7 @@ const sampleListings = [
     country: "United States",
     latitude: 25.7617,
     longitude: -80.1918,
-    category: "Urban"
+    category: "urban"
   },
   {
     title: "Tropical Villa in Phuket",
@@ -249,7 +249,7 @@ const sampleListings = [
     country: "Thailand",
     latitude: 7.8804,
     longitude: 98.3923,
-    category: "Nature"
+    category: "nature"
   },
   {
     title: "Historic Castle in Scotland",
@@ -263,7 +263,7 @@ const sampleListings = [
     country: "United Kingdom",
     latitude: 57.1200,
     longitude: -4.7100,
-    category: "Culture"
+    category: "culture"
   },
   {
     title: "Desert Oasis in Dubai",
@@ -277,7 +277,7 @@ const sampleListings = [
     country: "United Arab Emirates",
     latitude: 25.2048,
     longitude: 55.2708,
-    category: "Urban"
+    category: "urban"
   },
   {
     title: "Rustic Log Cabin in Montana",
@@ -291,7 +291,7 @@ const sampleListings = [
     country: "United States",
     latitude: 46.8797,
     longitude: -110.3626,
-    category: "Mountain"
+    category: "mountain"
   },
   {
     title: "Beachfront Villa in Greece",
@@ -305,7 +305,7 @@ const sampleListings = [
     country: "Greece",
     latitude: 37.4467,
     longitude: 25.3289,
-    category: "Beaches"
+    category: "beaches"
   },
   {
     title: "Eco-Friendly Treehouse Retreat",
@@ -319,7 +319,7 @@ const sampleListings = [
     country: "Costa Rica",
     latitude: 9.7489,
     longitude: -83.7534,
-    category: "Farmstays"
+    category: "farmstays"
   },
   {
     title: "Historic Cottage in Charleston",
@@ -333,7 +333,7 @@ const sampleListings = [
     country: "United States",
     latitude: 32.7765,
     longitude: -79.9311,
-    category: "Culture"
+    category: "culture"
   },
   {
     title: "Modern Apartment in Tokyo",
@@ -347,7 +347,7 @@ const sampleListings = [
     country: "Japan",
     latitude: 35.6895,
     longitude: 139.6917,
-    category: "Urban"
+    category: "urban"
   },
   {
     title: "Lakefront Cabin in New Hampshire",
@@ -361,7 +361,7 @@ const sampleListings = [
     country: "United States",
     latitude: 43.1939,
     longitude: -71.5724,
-    category: "Mountain"
+    category: "mountain"
   },
   {
     title: "Luxury Villa in the Maldives",
@@ -375,7 +375,7 @@ const sampleListings = [
     country: "Maldives",
     latitude: 3.2028,
     longitude: 73.2207,
-    category: "Island"
+    category: "island"
   },
   {
     title: "Ski Chalet in Aspen",
@@ -389,10 +389,10 @@ const sampleListings = [
     country: "United States",
     latitude: 39.1911,
     longitude: -106.8175,
-    category: "Mountain"
+    category: "mountain"
   },
   {
-    title: "Secluded Beaches House in Costa Rica",
+    title: "Secluded beaches House in Costa Rica",
     description: "Escape to a secluded beach house on the Pacific coast of Costa Rica. Surf, relax, and unwind.",
     image: {
       url: "https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhY2glMjBob3VzZXxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
@@ -403,7 +403,7 @@ const sampleListings = [
     country: "Costa Rica",
     latitude: 9.7489,
     longitude: -83.7534,
-    category: "Beaches"
+    category: "beaches"
   }
 ];
 

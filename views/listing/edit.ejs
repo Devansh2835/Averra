@@ -45,6 +45,25 @@
                 <div class="invalid-feedback">Please provide a valid country.</div>
                     <div class="valid-feedback">looks good</div>
             </div>
+            <div class="mb-3">
+                <label for="category" class="form-label">Category</label>
+                <select name="listing[category]" class="form-select" required>
+                    <option value="" disabled selected>Select a category</option>
+                    <option value="trending">Trending</option>
+                    <option value="culture">Culture</option>
+                    <option value="hostels">Hostels</option>
+                    <option value="mountain">Mountains</option>
+                    <option value="beaches">Beaches</option>
+                    <option value="camping">Camping</option>
+                    <option value="castles">Castles</option>
+                    <option value="farmstays">Farmstays</option>
+                    <option value="urban">Urban</option>
+                    <option value="nature">Nature</option>
+                    <option value="apartment">Apartment</option>
+                </select>
+                <div class="invalid-feedback">Please select a valid category.</div>
+                <div class="valid-feedback">looks good</div>
+            </div>
             <button class="btn btn-dark edit-btn">Edit</button>
         </form> 
     </div>
