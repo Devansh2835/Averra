@@ -9,11 +9,23 @@
           <a class="nav-link" href="/listings">Explore</a>
           <a class="nav-link" href="/listings/new">List your Home</a>
         </div>
-        <div class="navbar-nav ms-auto">
-          <form class="d-flex" role="search">
-            <input class="form-control me-2 search-inp" type="search" placeholder="Search   Destinations"/>
+        <div class="navbar-nav ms-auto" style="margin: 0rem 2.3rem 0rem 2.3rem;">
+          <form class="d-flex" role="search" action="/listings/search" method="get">
+            <input class="form-control me-2 search-inp" type="search" placeholder="Search   Destinations" name="place"/>
             <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
-        </form>
+          </form>
+        </div>
+        <div class="navbar-nav ms-auto">
+          <div class="btn-group price">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Price filter</button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/listings/price/1">Under &#8377;2000</a></li>
+                <li><a class="dropdown-item" href="/listings/price/2">&#8377;2000-&#8377;4000</a></li>
+                <li><a class="dropdown-item" href="/listings/price/3">&#8377;4000-&#8377;6000</a></li>
+                <li><a class="dropdown-item" href="/listings/price/4">&#8377;6000-&#8377;8000</a></li>
+                <li><a class="dropdown-item" href="/listings/price/5">Over &#8377;8000</a></li>
+              </ul>
+          </div>
         </div>
         <div class="navbar-nav ms-auto">
           <% if(!currUser){ %>

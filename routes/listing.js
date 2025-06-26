@@ -7,6 +7,8 @@ const multer= require("multer"); //library used for handling multipart/form-data
 const {storage} = require("../cloudConfig.js"); //importing cloudinary storage configuration
 const upload= multer({storage}); // multer configuration for file uploads
 
+router.get("/search",wrapAsync(listingController.search))
+router.get("/price/:price",wrapAsync(listingController.price))
 router.route("/") // This will handle both GET and POST requests to the root route by giving a common path 
     .get(wrapAsync(listingController.index))//index route 
     .post( isLoggedIn, upload.single("listing[image]"), geocodeLocation, validateListing, wrapAsync(listingController.createListing))//create route 
@@ -21,5 +23,8 @@ router.route("/:id")
 
 //edit form route
 router.get("/:id/edit",isLoggedIn,isOwner,wrapAsync(listingController.renderEditForm))
+
+//booking form route
+router.get("/:id/booking",isLoggedIn,wrapAsync(listingController.renderBookingForm))
 
 module.exports= router;

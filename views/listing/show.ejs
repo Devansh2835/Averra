@@ -1,19 +1,19 @@
 <% layout("/layouts/boilerplate") %>
 <div class="row mt-3 mb-3 align-items-center d-flex justify-content-center flex-column">
-    <div class="col-8 mb-2 offset-2">
-        <h1 class="heading"><%= listing.title %></h1>
+    <div class="col-8 mb-2 d-flex justify-content-center">
+        <h1 class="heading" style="font-size: 55px; text-decoration: underline;"><%= listing.title %></h1>
     </div>
     <div class="listing-card-show ">
         <img src="<%= listing.image.url %>" class="card-img-top show-img mb-2" alt="listing image">
         <div class="card-body">
-            <hr><p class="card-text">Hosted by <i><%= listing.owner.username %></i></p><hr>
+            <hr><p class="card-text"><b>Hosted by:&nbsp;&nbsp;</b> <i><%= listing.owner.username %></i></p><hr>
             <p class="card-text"><%= listing.description %><br></p>   
-            <p class="card-text">&#8377;<%= listing.price.toLocaleString("en-IN") %>/night<br></p>   
+            <p class="card-text"><b>Price:&nbsp;&nbsp;</b>&#8377;<%= listing.price.toLocaleString("en-IN") %>/night<br></p>   
             <div style="display: flex;">
-                <p class="card-text">City: <%= listing.location %><br></p>   
-                <p class="card-text" style="margin-left: 3rem;">Country: <%= listing.country %><br></p>
+                <p class="card-text"><b>City:&nbsp;&nbsp;</b> <%= listing.location %><br></p>   
+                <p class="card-text" style="margin-left: 3rem;"><b>Country:&nbsp;&nbsp;</b> <%= listing.country %><br></p>
             </div>   
-            <p class="card-text">Category: <%= listing.category %></p>
+            <p class="card-text"><b>Category:</b> <%= listing.category %></p>
         </div>
         <% if(currUser && listing.owner._id.equals(currUser._id)){ %>
         <div class="show-btns">
@@ -116,6 +116,27 @@
         <% } %> <hr>
         <h2 class="mb-3">Where you'll be</h2>
         <div id="map" style="height: 400px; width: 100%;"></div>
+        <hr>
+    </div>
+    <div class="bookings">
+        <h1 class="heading" style="text-decoration: underline; color: rgb(63, 136, 232);">Book your room</h1>
+        <form action="/listings/<%= listing._id %>/booking" method="get" novalidate class="needs-validation">
+            <div class="dates-row">
+                <div class="date-inp">
+                    <label for="start" class="date-label">Start Date</label>
+                    <input type="date" name="start" id="startDate" class="form-control" placeholder="dd-mm-yyyy" required>
+                    <div class="invalid-feedback">Please provide a valid date.</div>
+                    <div class="valid-feedback">looks good</div>
+                </div>
+                <div class="date-inp">
+                    <label for="end" class="date-label">End Date</label>
+                    <input type="date" name="end" id="endDate" class="form-control" placeholder="dd-mm-yyyy" required>
+                    <div class="invalid-feedback">Please provide a valid date.</div>
+                    <div class="valid-feedback">looks good</div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg book">Book</button>
+        </form>
     </div>
 </div>
 <script>
@@ -130,4 +151,7 @@ document.addEventListener("DOMContentLoaded", function() {
     .bindPopup('<%= listing.title %>')
     .openPopup();
 });
+    const today = new Date().toISOString().split('T')[0];
+    document.getElementById("startDate").setAttribute("min", today);
+    document.getElementById("endDate").setAttribute("min", today);
 </script>

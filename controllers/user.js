@@ -62,6 +62,7 @@ module.exports.verifyOtp = async (req, res, next) => {
     // OTP is valid, clear OTP fields and log in user
     user.otp = undefined;
     user.otpExpires = undefined;
+    user.isVerified = true;
     await user.save();
     req.login(user, (err) => {
         if (err) return next(err);

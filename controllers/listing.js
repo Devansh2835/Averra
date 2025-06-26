@@ -15,6 +15,50 @@ module.exports.index= async (req, res) => {
     const allListings = await Listing.find({});
     res.render("listing/index.ejs",{allListings})
 }
+module.exports.search= async(req,res)=>{
+    const {place}= req.query
+    if (place) {
+        const listings= await Listing.find({location: new RegExp(`^${place}$`, 'i' )})
+        if (listings.length === 0) {
+            req.flash("error", "No Hotels found in this area");
+            return res.redirect("/listings");
+        }
+        else {
+            return res.render("listing/index.ejs", { allListings: listings });
+        }
+    }
+}
+module.exports.price = async (req, res) => {
+    const { price } = req.params;
+    let query = {};
+    switch (price) {
+        case "1":
+            query = { price: { $lt: 2000 } };
+            break;
+        case "2":
+            query = { price: { $gte: 2000, $lt: 4000 } };
+            break;
+        case "3":
+            query = { price: { $gte: 4000, $lt: 6000 } };
+            break;
+        case "4":
+            query = { price: { $gte: 6000, $lt: 8000 } };
+            break;
+        case "5":
+            query = { price: { $gte: 8000 } };
+            break;
+        default:
+            req.flash("error", "Invalid price filter");
+            return res.redirect("/listings");
+    }
+    const listings = await Listing.find(query);
+    if (listings.length === 0) {
+        req.flash("error", "No Hotels found in this Price range");
+        return res.redirect("/listings");
+    } else {
+        return res.render("listing/index.ejs", { allListings: listings });
+    }
+};
 module.exports.renderNewForm=(req,res)=>{
     res.render("listing/new.ejs")
 }
@@ -72,3 +116,22 @@ module.exports.destroyListing= async (req,res)=>{
     req.flash("success","Listing deleted successfully!")
     res.redirect("/listings")
 }
+module.exports.renderBookingForm = async (req, res) => {
+    const { id } = req.params;
+    const listing = await Listing.findById(id).populate("owner");
+    if (!listing) {
+        req.flash("error", "Listing not found!");
+        return res.redirect(`/listings/${id}`)
+    }
+    const { start, end } = req.query;
+    let numDays;
+    if (start && end) {
+        const startDateObj = new Date(start);
+        const endDateObj = new Date(end);
+        const diffTime = Math.abs(endDateObj - startDateObj);
+        numDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); // days between
+    }
+    custName=req.user.username
+    custEmail=req.user.email
+    res.render("listing/booking.ejs", { listing, startDate: start, endDate: end, numDays, custName, custEmail });
+};

@@ -32,7 +32,7 @@ const dbUrl=process.env.ATLASDB_URL
 //server connection
 const port = process.env.PORT || 8080 
 app.listen(port,()=>{
-    console.log("server is listening to port 8080")
+    console.log(`server is listening to ${port}`)
 })
 main()
     .then((res)=>{
@@ -78,7 +78,7 @@ passport.use(new LocalStrategy(User.authenticate())) // this will use the authen
 passport.serializeUser(User.serializeUser()) // this will serialize the user and store the user id in the session
 passport.deserializeUser(User.deserializeUser()) // this will deserialize the user and get the user object from the user id stored in the session
 
-//middleware
+//middleware which runs before every route and gives these info to them all
 app.use((req,res,next)=>{
     res.locals.success=req.flash("success")//this will make the success message available in all views
     res.locals.error=req.flash("error")//this will make the error message available in all views
@@ -94,13 +94,28 @@ app.use("/",userRouter)
 app.get("/", (req, res) => {
     res.render("listing/home");
 });
-
+app.get("/confirm",(req,res)=>{
+    req.flash("success","Your booking is successful, Have a nice Stay")
+    res.redirect("/listings")
+})
 app.get("/privacy", (req, res) => {
     res.render("policies/privacy.ejs")
 })
 app.get("/terms", (req, res) => {
     res.render("policies/terms.ejs")
 })
+//garbage users delete 
+setInterval(async () => {
+    try {
+        const result = await User.deleteMany({
+            isVerified: false,
+            otpExpires: { $lt: Date.now() }
+        });
+        console.log(`[CLEANUP] Deleted ${result.deletedCount} unverified expired users`);
+    } catch (err) {
+        console.error("[CLEANUP ERROR]", err);
+    }
+}, 60 * 60 * 1000);
 
 //404 error handler
 app.use((req,res,next)=>{

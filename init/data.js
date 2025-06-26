@@ -404,7 +404,273 @@ const sampleListings = [
     latitude: 9.7489,
     longitude: -83.7534,
     category: "beaches"
-  }
+  },
+  {
+  title: "Cliffside Hotel in Santorini",
+  description: "Enjoy stunning sunsets from this cliffside hotel overlooking the Aegean Sea.",
+  image: {
+    url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
+    filename: "listing_img_29.jpg"
+  },
+  price: 2800,
+  location: "Santorini",
+  country: "Greece",
+  latitude: 36.3932,
+  longitude: 25.4615,
+  category: "beaches"
+},
+  {
+  title: "Cozy Hostel in Amsterdam",
+  description: "Meet new friends in this cozy and budget-friendly hostel in the heart of Amsterdam.",
+  image: {
+    url: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
+    filename: "listing_img_30.jpg"
+  },
+  price: 900,
+  location: "Amsterdam",
+  country: "Netherlands",
+  latitude: 52.3676,
+  longitude: 4.9041,
+  category: "hostels"
+},
+{
+  title: "Charming Castle in Loire Valley",
+  description: "Stay in a fairytale castle surrounded by vineyards and history.",
+  image: {
+    url: "https://castlesy.com/wp-content/uploads/2022/04/Lords-Castle-Piermont-New-York-sml-768x562.jpg",
+    filename: "listing_img_31.jpg"
+  },
+  price: 5200,
+  location: "Loire Valley",
+  country: "France",
+  latitude: 47.3891,
+  longitude: 0.6936,
+  category: "castles"
+},
+{
+  title: "High-Rise Apartment in New York",
+  description: "Live above the skyline in this luxurious apartment in Manhattan.",
+  image: {
+    url: "https://i.pinimg.com/originals/0f/3f/7d/0f3f7ddfe15d6177154b0a6d49cf7146.jpg",
+    filename: "listing_img_33.jpg"
+  },
+  price: 4800,
+  location: "New York",
+  country: "United States",
+  latitude: 40.7128,
+  longitude: -74.0060,
+  category: "urban"
+},
+{
+  title: "Cabin by Lake Tahoe",
+  description: "A peaceful getaway in a lakeside cabin with stunning mountain views.",
+  image: {
+    url: "https://cdn.vox-cdn.com/thumbor/f_cl0ZOKgn-vpbTEAfErc9ZxfbA=/0x0:1023x682/1200x0/filters:focal(0x0:1023x682):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/16344353/0b0cd00c_891f_49a5_a75c_cdd640a23020.f10.jpg",
+    filename: "listing_img_34.jpg"
+  },
+  price: 1700,
+  location: "Lake Tahoe",
+  country: "United States",
+  latitude: 39.0968,
+  longitude: -120.0324,
+  category: "mountain"
+},
+{
+  title: "Island Villa in Bali",
+  description: "Relax in a private island villa with tropical surroundings and serene beaches.",
+  image: {
+    url: "https://www.oluxuryvillas.com/img/villa/image/private_island_villa_in_randheli_maldives113-0.jpg",
+    filename: "listing_img_35.jpg"
+  },
+  price: 3500,
+  location: "Bali",
+  country: "Indonesia",
+  latitude: -8.3405,
+  longitude: 115.0920,
+  category: "island"
+},
+{
+  title: "Safari Lodge in Kenya",
+  description: "Witness wildlife in comfort at this safari lodge with modern amenities.",
+  image: {
+    url: "https://www.sleepermagazine.com/wp-content/uploads/2020/07/mdluli-safari-lodge-south-africa.jpg",
+    filename: "listing_img_36.jpg"
+  },
+  price: 3100,
+  location: "Nairobi",
+  country: "Kenya",
+  latitude: -1.2921,
+  longitude: 36.8219,
+  category: "nature"
+},
+{
+  title: "Snow Cabin in Banff",
+  description: "Escape into a snowy wonderland in this cozy cabin in Banff National Park.",
+  image: {
+    url: "https://th.bing.com/th/id/OIP.g3Yg4cd6iEeLzJUfyH8-sQHaEK?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3",
+    filename: "listing_img_37.jpg"
+  },
+  price: 1900,
+  location: "Banff",
+  country: "Canada",
+  latitude: 51.1784,
+  longitude: -115.5708,
+  category: "mountain"
+},
+{
+  title: "Treehouse in Oregon Forest",
+  description: "Reconnect with nature in this serene treehouse tucked into an old-growth forest.",
+  image: {
+    url: "https://i.pinimg.com/originals/17/2b/da/172bda5e5da676b73c2ddb68843399fc.jpg",
+    filename: "listing_img_38.jpg"
+  },
+  price: 1300,
+  location: "Oregon",
+  country: "United States",
+  latitude: 43.8041,
+  longitude: -120.5542,
+  category: "nature"
+},
+{
+  title: "Luxury Hotel in Paris",
+  description: "Enjoy fine dining and luxury in the heart of Paris.",
+  image: {
+    url: "https://cdn.luxaterra.com/media/20210629124348/best-hotels-paris-hotel-de-crillon-luxa-terra-1650x1100.jpg",
+    filename: "listing_img_39.jpg"
+  },
+  price: 4500,
+  location: "Paris",
+  country: "France",
+  latitude: 48.8566,
+  longitude: 2.3522,
+  category: "urban"
+},
+{
+  title: "Beach Bungalow in Goa",
+  description: "Chill by the beach in this affordable and cozy bungalow.",
+  image: {
+    url: "https://th.bing.com/th/id/OIP.kYBp91XDU-ZKCWLhyHU7iwHaE8?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3",
+    filename: "listing_img_40.jpg"
+  },
+  price: 1400,
+  location: "Goa",
+  country: "India",
+  latitude: 15.2993,
+  longitude: 74.1240,
+  category: "beaches"
+},
+{
+  title: "Studio Apartment in Seoul",
+  description: "Stay in the heart of the city with everything at your fingertips.",
+  image: {
+    url: "https://www.frasershospitality.com/content/dam/frasers-hospitality/english/properties/korea/seoul/fraser-place-central-seoul-/images/gallery-images/rooms/room-types/two-bedroom-deluxe/Fraser_Place_Central_Seoul_Two_Bedroom_Super_Deluxe_Living_Room.jpg",
+    filename: "listing_img_41.jpg"
+  },
+  price: 2100,
+  location: "Seoul",
+  country: "South Korea",
+  latitude: 37.5665,
+  longitude: 126.9780,
+  category: "apartment"
+},
+{
+  title: "Forest Lodge in Bavaria",
+  description: "Peace and pine trees – relax in this secluded Bavarian lodge.",
+  image: {
+    url: "https://image-tc.galaxy.tf/wijpeg-8lwlv2ybe7ln2tm1xwyzdz0qi/forest-lodge-exterior-summer_wide.jpg?crop=0%2C101%2C1920%2C1080&width=1140",
+    filename: "listing_img_42.jpg"
+  },
+  price: 1600,
+  location: "Bavaria",
+  country: "Germany",
+  latitude: 48.7904,
+  longitude: 11.4979,
+  category: "camping"
+},
+{
+  title: "Island Hut in Palawan",
+  description: "Overwater huts with turquoise water views in Palawan.",
+  image: {
+    url: "https://thumbs.dreamstime.com/b/wooden-beach-hut-koh-rong-samloem-island-wooden-beach-hut-koh-rong-samloem-island-cambodia-saracen-bay-114459448.jpg",
+    filename: "listing_img_43.jpg"
+  },
+  price: 2300,
+  location: "Palawan",
+  country: "Philippines",
+  latitude: 9.8349,
+  longitude: 118.7384,
+  category: "island"
+},
+{
+  title: "Cultural Guesthouse in Kyoto",
+  description: "Live traditionally in a tatami-style guesthouse.",
+  image: {
+    url: "https://thumbs.dreamstime.com/b/japanese-house-style-parking-car-44516008.jpg",
+    filename: "listing_img_44.jpg"
+  },
+  price: 2700,
+  location: "Kyoto",
+  country: "Japan",
+  latitude: 35.0116,
+  longitude: 135.7681,
+  category: "culture"
+},
+{
+  title: "Luxury Tent in Morocco",
+  description: "Glamp in the Sahara with this luxurious tented camp.",
+  image: {
+    url: "https://www.glamping.com/static/media/uploads/property/starry_nights_luxury_camping/71860fcf5af131e4f2f4a38038b60e50efcdf329.jpg",
+    filename: "listing_img_45.jpg"
+  },
+  price: 2000,
+  location: "Merzouga",
+  country: "Morocco",
+  latitude: 31.1000,
+  longitude: -4.0000,
+  category: "camping"
+},
+{
+  title: "Private Island Cabin in Sweden",
+  description: "Disconnect from the world in this island cabin near Stockholm.",
+  image: {
+    url: "https://th.bing.com/th/id/OIP.j-iDiaqhdD1HW7aiILIY4AHaFb?rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3",
+    filename: "listing_img_46.jpg"
+  },
+  price: 2400,
+  location: "Stockholm Archipelago",
+  country: "Sweden",
+  latitude: 59.2746,
+  longitude: 18.1412,
+  category: "nature"
+},
+{
+  title: "Colorful Hostel in Barcelona",
+  description: "Budget-friendly and fun hostel in the Gothic Quarter of Barcelona.",
+  image: {
+    url: "https://nesthostelsbarcelona.com/wp-content/uploads/2014/10/07yellownesthostelbarcelona-1.jpg",
+    filename: "listing_img_47.jpg"
+  },
+  price: 800,
+  location: "Barcelona",
+  country: "Spain",
+  latitude: 41.3851,
+  longitude: 2.1734,
+  category: "hostels"
+},
+{
+  title: "Castle Hotel in Transylvania",
+  description: "Spend the night in a legendary castle hotel surrounded by forest.",
+  image: {
+    url: "https://th.bing.com/th/id/OIP.Q0ExB9xiTzOpphtTHGklFwHaIA?w=2763&h=2988&rs=1&pid=ImgDetMain&cb=idpwebp2&o=7&rm=3",
+    filename: "listing_img_48.jpg"
+  },
+  price: 3900,
+  location: "Bran",
+  country: "Romania",
+  latitude: 45.5156,
+  longitude: 25.3674,
+  category: "castles"
+}
 ];
 
 module.exports = { data: sampleListings };
