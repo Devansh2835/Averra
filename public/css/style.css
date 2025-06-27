@@ -404,3 +404,56 @@ hr {
 .date-label{
    font-size: 20px;
 }
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .listing-card-show {
+    width: 90% !important;
+    padding: 1.5rem 1rem;
+  }
+  .listing-card-show .show-img,
+  .show-img {
+    height: 15rem;
+  }
+  .listing-card-index {
+    padding: 1rem;
+    width: 90%;
+  }
+  .listing-card-index .card-img-top {
+    height: 180px;
+  }
+  .card-text {
+    font-size: 1rem;
+  }
+  .f-info {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    text-align: center;
+  }
+  .navbar a {
+    font-size: 1rem;
+  }
+  .fa-airbnb {
+    font-size: 2rem;
+  }
+  .heading {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  .bookings {
+    width: 95% !important;
+    padding: 1.5rem;
+  }
+  .dates-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .date-label {
+    font-size: 1rem;
+  }
+  .glass-card {
+    margin-top: 40px;
+  }
+}

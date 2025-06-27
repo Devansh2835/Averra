@@ -16,7 +16,7 @@ router.route("/login")
 
 router.get("/logout",userController.logout);
 
-router.get("/verify-otp", userController.renderOtpForm);
-router.post("/verify-otp", wrapAsync(userController.verifyOtp));
-
+router.route("/verify-otp")
+    .get(userController.renderOtpForm)
+    .post(wrapAsync(userController.verifyOtp))
 module.exports=router;
